@@ -108,6 +108,14 @@ TEST(FriendlyEnumTest, Functionality) {
     static constexpr std::string_view value = GetEnumFirstName<nsp_b::EnumB>();
     EXPECT_EQ("A", value);
   }
+
+  // Running time test.
+  {
+    nsp_b::EnumB value = nsp_b::EnumB::A;
+    EXPECT_EQ("A", GetTraiter<nsp_b::EnumB>().GetNameByValue(value));
+    value = nsp_b::EnumB::B;
+    EXPECT_EQ("B", GetTraiter<nsp_b::EnumB>().GetNameByValue(value));
+  }
 }
 
 } // namespace fenum
