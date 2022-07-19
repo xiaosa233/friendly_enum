@@ -9,12 +9,15 @@ enum class Widget {
 }
 
 ```
-How can I get enum name with the value
-For e.g. GetNameByValue(Widget::kFirst); Which is expected "kFirst".
+How can I get enum name with the value.
+
+E.g. GetNameByValue(Widget::kFirst); Which is expected "kFirst".
+
 
 This head-only lib provides a way to answer this question, in static-compiled time!
 
 when use the lib, and define the enum type:
+
 ```
 #include "friendly_enum/friendly_enum.h"
 
