@@ -1,0 +1,5 @@
+/bin
+/lib
+/project_files/*
+__pycache__
+!/project_files/CMakeLists.txt
