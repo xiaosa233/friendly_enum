@@ -21,15 +21,15 @@ include_directories(${SOURCE_DIR})
 
 # module friendly_enum
 FILE(GLOB friendly_enum ${SOURCE_DIR}/friendly_enum/enum_traiter.h ${SOURCE_DIR}/friendly_enum/friendly_enum.h)
-FILE(GLOB friendly_enum_test_case ${SOURCE_DIR}/friendly_enum/test_case/enum_b.h ${SOURCE_DIR}/friendly_enum/test_case/enum_a.h)
+FILE(GLOB friendly_enum_test_case ${SOURCE_DIR}/friendly_enum/test_case/enum_a.h ${SOURCE_DIR}/friendly_enum/test_case/enum_b.h)
 FILE(GLOB friendly_enum_BUILD_TARGET_FILE_GROUP ${SOURCE_DIR}/friendly_enum/build.py)
 source_group("sources" FILES ${friendly_enum})
 source_group("sources\\test_case" FILES ${friendly_enum_test_case})
 add_library(friendly_enum STATIC ${friendly_enum}  ${friendly_enum_test_case}  ${friendly_enum_BUILD_TARGET_FILE_GROUP} )
 target_include_directories(friendly_enum 
- PUBLIC ${SOURCE_DIR}/friendly_enum PUBLIC ${PROJECT_DIR}/third_parties/googletest/include)
-target_link_libraries(friendly_enum  optimized ${PROJECT_DIR}/third_parties/googletest/lib/linux/Release/libgtest_main.a
- optimized ${PROJECT_DIR}/third_parties/googletest/lib/linux/Release/libgtest.a
+ PUBLIC ${PROJECT_DIR}/third_parties/googletest/include PUBLIC ${SOURCE_DIR}/friendly_enum)
+target_link_libraries(friendly_enum  optimized ${PROJECT_DIR}/third_parties/googletest/lib/linux/Release/libgtest.a
+ optimized ${PROJECT_DIR}/third_parties/googletest/lib/linux/Release/libgtest_main.a
  debug ${PROJECT_DIR}/third_parties/googletest/lib/linux/Debug/libgtest_main.a
  debug ${PROJECT_DIR}/third_parties/googletest/lib/linux/Debug/libgtest.a
  general pthread
@@ -42,9 +42,9 @@ FILE(GLOB test_friendly_enum_enum_traiter ${SOURCE_DIR}/friendly_enum/enum_trait
 source_group("ut_file" FILES ${test_friendly_enum_enum_traiter})
 add_executable(test_friendly_enum_enum_traiter ${test_friendly_enum_enum_traiter} )
 target_include_directories(test_friendly_enum_enum_traiter 
- PUBLIC ${SOURCE_DIR}/friendly_enum PUBLIC ${PROJECT_DIR}/third_parties/googletest/include)
-target_link_libraries(test_friendly_enum_enum_traiter  optimized ${PROJECT_DIR}/third_parties/googletest/lib/linux/Release/libgtest_main.a
- optimized ${PROJECT_DIR}/third_parties/googletest/lib/linux/Release/libgtest.a
+ PUBLIC ${PROJECT_DIR}/third_parties/googletest/include PUBLIC ${SOURCE_DIR}/friendly_enum)
+target_link_libraries(test_friendly_enum_enum_traiter  optimized ${PROJECT_DIR}/third_parties/googletest/lib/linux/Release/libgtest.a
+ optimized ${PROJECT_DIR}/third_parties/googletest/lib/linux/Release/libgtest_main.a
  debug ${PROJECT_DIR}/third_parties/googletest/lib/linux/Debug/libgtest_main.a
  debug ${PROJECT_DIR}/third_parties/googletest/lib/linux/Debug/libgtest.a
  general pthread
@@ -57,9 +57,9 @@ FILE(GLOB test_friendly_enum_friendly_enum ${SOURCE_DIR}/friendly_enum/friendly_
 source_group("ut_file" FILES ${test_friendly_enum_friendly_enum})
 add_executable(test_friendly_enum_friendly_enum ${test_friendly_enum_friendly_enum} )
 target_include_directories(test_friendly_enum_friendly_enum 
- PUBLIC ${SOURCE_DIR}/friendly_enum PUBLIC ${PROJECT_DIR}/third_parties/googletest/include)
-target_link_libraries(test_friendly_enum_friendly_enum  optimized ${PROJECT_DIR}/third_parties/googletest/lib/linux/Release/libgtest_main.a
- optimized ${PROJECT_DIR}/third_parties/googletest/lib/linux/Release/libgtest.a
+ PUBLIC ${PROJECT_DIR}/third_parties/googletest/include PUBLIC ${SOURCE_DIR}/friendly_enum)
+target_link_libraries(test_friendly_enum_friendly_enum  optimized ${PROJECT_DIR}/third_parties/googletest/lib/linux/Release/libgtest.a
+ optimized ${PROJECT_DIR}/third_parties/googletest/lib/linux/Release/libgtest_main.a
  debug ${PROJECT_DIR}/third_parties/googletest/lib/linux/Debug/libgtest_main.a
  debug ${PROJECT_DIR}/third_parties/googletest/lib/linux/Debug/libgtest.a
  general pthread

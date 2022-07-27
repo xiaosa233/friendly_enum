@@ -26,6 +26,20 @@ FRIENDLY_ENUM(Widget, // Where the magic happen!
     kSecodnd
 );
 
+// Will generate the code :
+enum class Widget {
+  kFirst,
+  kSecond,
+};
+
+using WidgetTraiter = EnumTraiter<Widget, Widget::kFirst, Widget::kSecond>;
+
+inline constexpr auto GetTraiterByTag(EnumTag<Widget> = {}) {
+  constexpr const WidgetTraiter inst("kFirst, kSecond");
+  return inst;
+}
+using WidgetTag = fenum::EnumTag<Widget>;
+
 ```
 
 You can get the enum name in this way:

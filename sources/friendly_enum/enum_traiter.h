@@ -15,6 +15,7 @@ template <class T> struct EnumTag {
 
 template <class T, T... Args> struct EnumTraiter {
   static_assert(std::is_enum_v<T>, "T is not an enum!");
+  static constexpr const std::initializer_list<T> kValues = { Args... };
   static constexpr size_t GetSize() { return kValues.size(); }
 
   static constexpr T GetValue(size_t index) {
@@ -61,7 +62,6 @@ private:
   }
 
   static constexpr size_t N = GetSize();
-  static constexpr const std::initializer_list<T> kValues = {Args...};
   std::array<std::string_view, N> enum_names_;
 };
 
