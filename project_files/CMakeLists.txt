@@ -29,8 +29,10 @@ source_group("sources\\test_case" FILES ${friendly_enum_test_case})
 add_library(friendly_enum STATIC ${friendly_enum}  ${friendly_enum_test_case}  ${friendly_enum_BUILD_TARGET_FILE_GROUP} )
 target_include_directories(friendly_enum 
  PUBLIC ${SOURCE_DIR}/friendly_enum PUBLIC ${PROJECT_DIR}/third_parties/googletest/include)
-target_link_libraries(friendly_enum  general ${PROJECT_DIR}/third_parties/googletest/lib/windows/Release/gtest.lib
- general ${PROJECT_DIR}/third_parties/googletest/lib/windows/Release/gtest_main.lib
+target_link_libraries(friendly_enum  optimized ${PROJECT_DIR}/third_parties/googletest/lib/windows/Release/gtest.lib
+ optimized ${PROJECT_DIR}/third_parties/googletest/lib/windows/Release/gtest_main.lib
+ debug ${PROJECT_DIR}/third_parties/googletest/lib/windows/Debug/gtest_main.lib
+ debug ${PROJECT_DIR}/third_parties/googletest/lib/windows/Debug/gtest.lib
 )
 set_target_properties(friendly_enum PROPERTIES LINKER_LANGUAGE CXX)
 
@@ -41,8 +43,10 @@ source_group("ut_file" FILES ${test_friendly_enum_enum_traiter})
 add_executable(test_friendly_enum_enum_traiter ${test_friendly_enum_enum_traiter} )
 target_include_directories(test_friendly_enum_enum_traiter 
  PUBLIC ${SOURCE_DIR}/friendly_enum PUBLIC ${PROJECT_DIR}/third_parties/googletest/include)
-target_link_libraries(test_friendly_enum_enum_traiter  general ${PROJECT_DIR}/third_parties/googletest/lib/windows/Release/gtest.lib
- general ${PROJECT_DIR}/third_parties/googletest/lib/windows/Release/gtest_main.lib
+target_link_libraries(test_friendly_enum_enum_traiter  optimized ${PROJECT_DIR}/third_parties/googletest/lib/windows/Release/gtest.lib
+ optimized ${PROJECT_DIR}/third_parties/googletest/lib/windows/Release/gtest_main.lib
+ debug ${PROJECT_DIR}/third_parties/googletest/lib/windows/Debug/gtest_main.lib
+ debug ${PROJECT_DIR}/third_parties/googletest/lib/windows/Debug/gtest.lib
 )
 set_target_properties(test_friendly_enum_enum_traiter PROPERTIES LINKER_LANGUAGE CXX)
 
@@ -53,8 +57,10 @@ source_group("ut_file" FILES ${test_friendly_enum_friendly_enum})
 add_executable(test_friendly_enum_friendly_enum ${test_friendly_enum_friendly_enum} )
 target_include_directories(test_friendly_enum_friendly_enum 
  PUBLIC ${SOURCE_DIR}/friendly_enum PUBLIC ${PROJECT_DIR}/third_parties/googletest/include)
-target_link_libraries(test_friendly_enum_friendly_enum  general ${PROJECT_DIR}/third_parties/googletest/lib/windows/Release/gtest.lib
- general ${PROJECT_DIR}/third_parties/googletest/lib/windows/Release/gtest_main.lib
+target_link_libraries(test_friendly_enum_friendly_enum  optimized ${PROJECT_DIR}/third_parties/googletest/lib/windows/Release/gtest.lib
+ optimized ${PROJECT_DIR}/third_parties/googletest/lib/windows/Release/gtest_main.lib
+ debug ${PROJECT_DIR}/third_parties/googletest/lib/windows/Debug/gtest_main.lib
+ debug ${PROJECT_DIR}/third_parties/googletest/lib/windows/Debug/gtest.lib
 )
 set_target_properties(test_friendly_enum_friendly_enum PROPERTIES LINKER_LANGUAGE CXX)
 

@@ -16,7 +16,7 @@ class googletest:
             ]
         elif config.system == config.System.WINDOWS:
             self.lib_dirs = [
-                'lib/windows/Release'
+                'lib/windows/' + config_dir_name,
             ]
             self.libs = ['*.lib']
 

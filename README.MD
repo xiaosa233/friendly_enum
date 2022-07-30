@@ -50,8 +50,25 @@ And the cost is zero! Because this is the result of static compilation.
 
 I name this kind of enum with names `friendly_enum`!
 
+# Inner-class declaration.
+For inner-class enum:
+```
+class WidgetClass {
+ public:
+  FRIEND_INNER_ENUM(Widget, kFirst, kSecodnd);
+}
+```
+
+And get the inner-class firendly-enum need to specify the enum tag to get the traiter:
+
+```
+// One of way.
+GetTraiterByTag(fenum::EnumTag<WidgetClass>{});
+GetTraiterByTag(WidgetClassTag{});
+```
+
 # Get started
-Only test in Ubuntu, C++17 with g++ compiler.
+Testing to Ubuntu (G++ )&& Windows(VS2022) in std C++17.
 
 It is head-only library.Just copy the header file:
 ```
@@ -61,6 +78,8 @@ friendly_enum/
 ```
 
 # API
+
+Easy using API:
 
 ```
 FRIEDNLY_ENUM(EnumType, one, two ... );
@@ -72,3 +91,19 @@ GetSize // Return the number of enums
 GetValue // Return the value by index for enum.
 
 ```
+
+# How to run test
+
+one of the following ways:
+
+1. Using CMake
+```
+cd project_files
+cmake .
+```
+
+2. Using quick_cmake
+```
+python quick_cmake.py
+```
+refer to: https://github.com/xiaosa233/quick_cmake
