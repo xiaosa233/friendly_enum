@@ -63,8 +63,8 @@ And get the inner-class firendly-enum need to specify the enum tag to get the tr
 
 ```
 // One of way.
-GetTraiterByTag(fenum::EnumTag<WidgetClass>{});
-GetTraiterByTag(WidgetClassTag{});
+GetTraiterByTag(fenum::EnumTag<WidgetClass::Widget>{});
+GetTraiterByTag(WidgetClass::WidgetTag{});
 ```
 
 # Get started
